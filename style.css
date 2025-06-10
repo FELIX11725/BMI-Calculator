@@ -1,25 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Lighter gray background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #343a40; /* Dark gray text */
 }
 
 .container {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 12px; /* Slightly increased border-radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    padding: 30px; /* Increased padding */
     max-width: 400px;
-    width: 100%;
+    width: 90%; /* Added for better responsiveness on small screens */
+    box-sizing: border-box; /* Ensures padding doesn't expand container width */
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #007bff; /* Primary blue for heading */
+    margin-bottom: 25px; /* Added margin */
 }
 
 .calculator {
@@ -28,39 +33,72 @@ h1 {
 }
 
 label {
-    margin: 10px 0 5px;
-    color: #555;
+    margin: 10px 0 8px; /* Adjusted margin */
+    color: #495057; /* Slightly lighter text for labels */
+    font-weight: 700; /* Bolder labels */
 }
 
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
+input[type="number"] {
+    padding: 12px 15px; /* Increased padding */
+    border-radius: 8px; /* More rounded corners */
+    border: 1px solid #ced4da; /* Lighter border */
+    margin-bottom: 20px; /* Increased margin */
     font-size: 16px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transition for focus */
+}
+
+input[type="number"]:focus {
+    border-color: #007bff; /* Primary blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle glow effect on focus */
+    outline: none; /* Remove default outline */
 }
 
 button {
-    padding: 10px;
-    background-color: #4CAF50;
+    padding: 12px 15px; /* Adjusted padding */
+    background-color: #007bff; /* Primary blue background */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded corners */
     cursor: pointer;
     font-size: 16px;
+    font-weight: 700; /* Bolder button text */
+    transition: background-color 0.15s ease-in-out; /* Smooth transition for hover */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+/* Styling for the BMI result display input */
+#bmi {
+    margin-top: 25px; /* Increased margin */
+    padding: 15px; /* Increased padding for prominence */
+    font-size: 20px; /* Larger font size */
+    color: #007bff; /* Primary blue text color */
     text-align: center;
+    background-color: #e9ecef; /* Light gray background for display area */
+    border: 1px solid #ced4da; /* Consistent border */
+    border-radius: 8px;
+    font-weight: 700; /* Bolder result text */
 }
 
-strong {
-    color: #4CAF50;
+/* Make it look less like an interactive input */
+#bmi[readonly] {
+    cursor: default;
+}
+
+/* Basic responsiveness for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    input[type="number"], button, #bmi {
+        font-size: 15px; /* Adjust font size for inputs and button */
+    }
 }
