@@ -1,6 +1,9 @@
 <?php
+/*
+// Client-side JavaScript now handles BMI calculation and display.
+// This server-side script is no longer essential for the primary user flow.
 
-  if($_SERVER["REQUEST_METHOD"]==="POST"){
+if($_SERVER["REQUEST_METHOD"]==="POST"){
     if(isset($_POST['weight'])){
         $weight=(float)$_POST['weight'];
 
@@ -21,6 +24,6 @@
         exit;//stop executing the script after redirecting it
 
 
-  } 
-
-
+}
+*/
+?>
